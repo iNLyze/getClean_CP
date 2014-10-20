@@ -47,6 +47,7 @@ Data is loaded via a file list into a list of data.frames. Each element of the l
 The data in dataList is bound together such as to create a data frame like this:
 ![tidy_data_frame_by_David_Hood](tidy_data_frame.png)
 (Slide courtesy of David Hood)
+
 The following entries of dataList correspont to the respective files in sub_dir:
 
 dataList index | Corresponding file
@@ -63,7 +64,7 @@ dataList[[16]]     |     y_test.txt
 At this point the data.frame tidy has the dimensions 10299 x 563
 
 #### Step 3: Select columns of interest and bind them together
-The course project asks to select all columns with standard deviations and mean, but isn't very verbose about which ones exactly. It was chosen to use the following to strings for selection:
+The course project asks to select all columns with standard deviations and mean, but isn't very verbose about which ones exactly. It was chosen to use the following two strings for selection:
 ````
 "-std\\()" 
 "-mean\\()"
@@ -75,8 +76,8 @@ At this point the data.frame tidy has the dimensions 10299 x 68
 A summary is to be created with the "average of each variable for each activity and each subject.". 
 The course project asks for "average" which is interpreted as the mean. The summary is grouped for activities and subjects, respectively. It is made sure, that each subject performs every activity. 
 Hence, 6 activities x 30 subjects = 180 observations. 
-The resulting data.frame avgData has the dimensions 180 x 68
-Details are provided in the CodeBook.md
+The resulting data.frame avgData has the dimensions 180 x 68. 
+Details are provided in CodeBook.md
 
 #### Step 5: Writing tidy data set to file
 The data.frame avgData is written to a file called "UCI_data_summary.txt" using
